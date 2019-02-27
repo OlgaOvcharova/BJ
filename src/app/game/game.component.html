@@ -1,0 +1,21 @@
+<div>
+	<a routerLink="../../menu" 
+		routerLinkActive="active">
+		Back to menu
+	</a>
+</div>
+
+<div class="wrapper clearfix">
+	<field 
+		[playerHand]="playerHand"
+		[result]="room?.result"
+		[room]="room">
+	</field>
+    
+	<side-bar [result]="result"
+				[room]="room"
+				(newGameClicked)="newGame()"
+				(onHitClicked)="onHit()"
+				(onStandClicked)="onStand()">
+	</side-bar>		
+</div>

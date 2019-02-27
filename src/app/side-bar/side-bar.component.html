@@ -1,0 +1,23 @@
+<button class="btn-new" 
+        (click)="newGameClicked.emit()">
+  New game
+</button>
+
+<button *ngIf="room?.result?.isShownButtons"
+		class="btn-hit"
+		(click)="onHitClicked.emit()">
+	Hit
+</button>
+
+<button *ngIf="room?.result?.isShownButtons" 
+		class="btn-stand" 
+		(click)="onStandClicked.emit()">
+	Stand
+</button> 
+
+<div class="message"> 
+    <p>Human score: {{ room?.players[0]?.userScore }}</p>
+    <p *ngIf="room?.result?.isShownCards"> Dealer score: {{ room?.players[1]?.userScore }}</p>
+    <p>{{ room.result?.winner }}</p>
+</div>
+
